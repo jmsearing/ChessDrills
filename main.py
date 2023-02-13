@@ -99,10 +99,21 @@ class Main:
                     # clear dragger
                     dragger.undrag_piece()
 
-                # key press
+                # key presses
                 elif event.type == pygame.KEYDOWN:
+                    # when "r" is pressed...
+                    if event.key == pygame.K_r:
+                        game.reset()
+                        game = self.game
+                        board = self.game.board
+                        dragger = self.game.dragger
+                    # when "t" is pressed...
                     if event.key == pygame.K_t:
                         game.change_theme()
+                    # when "q" is pressed...
+                    if event.key == pygame.K_q:
+                        pygame.quit()
+                        sys.exit()
                 # On quit game
                 elif event.type == pygame.QUIT:
                     pygame.quit()

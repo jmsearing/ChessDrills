@@ -48,9 +48,6 @@ class Board:
     def castling(self, initial, final):
         return abs(initial.col - final.col == 2)
 
-    def in_check(self, piece, move):
-        pass
-
     def calc_moves(self, piece, row, col):
         '''
             Calculates all possible moves of a specific piece on a specific position 
@@ -73,7 +70,7 @@ class Board:
                         final = Square(move_row, col)
                         #create a move
                         move = Move(initial, final)
-                        print (move)
+                        print move
                         piece.add_moves(move)
                     # piece is blocked from moving, break
                     else:
